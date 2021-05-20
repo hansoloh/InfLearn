@@ -58,10 +58,11 @@ button {
 }
 
 button:hover {
-    background-color: darkseagreen;
+    background-color: lightgreen;
 }
 
 .result {
-    margin-top: 50px;
+    margin-top: 25px;
     font-size: 13px;
+    color: white;
 }
