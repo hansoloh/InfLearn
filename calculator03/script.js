@@ -1,19 +1,21 @@
-function addOutput(num) {
-    let display = document.getElementById("display");
-    display.value = display.value + num;
-}
+let display = document.getElementById('display');
+let buttons = Array.from(document.getElementsByClassName('button'));
 
-function calculate() {
-    let result = eval(display.value);
-    let displayResult = document.getElementById("result");
-    displayResult.value = result;
-}
+buttons.map(button => {
+    button.addEventListener('click', (e) => {
+        switch (e.target.innerText) {
+            case 'C':
+                display.innerText = '';
+                break;
+            case '=':
+                display.innerText = Math.floor(eval(display.innerText));
+                break;
+            default:
+                display.innerText += e.target.innerText;
+        }
+    });
+});
 
-function reset() {
-    display.value = "";
-    displayResult.value = "";
-}
-
-function del() {
-    display.value = display.value.substring(0, display.value.length - 1);
-}
+// 부호 중복 입력 가능 오류
+// C 입력 오류
+// 최대 입력 가능 숫자 3자리
