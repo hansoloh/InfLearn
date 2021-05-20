@@ -5,25 +5,20 @@
     box-sizing: border-box;
 }
 
-
-/* .container{
-    width: 350px;
-    height: 380px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
-    background-color: burlywood ;
-    color: whitesmoke;
-} */
-
 body {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#container {
+    height: 200px;
+    width: 400px;
+    text-align: center;
     background-color: burlywood;
-    color: whitesmoke;
+    box-shadow: 0px 0px 20px 5px lightgray;
+    border-radius: 7px;
 }
 
 h2 {
@@ -31,9 +26,15 @@ h2 {
     font-size: 30px;
 }
 
+.title {
+    color: whitesmoke;
+    margin-top: 15px;
+}
+
 .answer {
     margin-top: 15px;
     font-size: 20px;
+    color: whitesmoke;
 }
 
 form {
@@ -53,10 +54,11 @@ button {
     line-height: 7px;
     font-size: 13px;
     border: none;
+    color: black;
 }
 
 button:hover {
-    background-color: antiquewhite;
+    background-color: darkseagreen;
 }
 
 .result {

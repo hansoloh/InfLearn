@@ -1,7 +1,7 @@
 const form = document.querySelector('form')
 const answer = document.querySelector('.answer')
 const input = document.querySelector('input')
-const result = document.querySelector('div')
+const result = document.querySelector('.result')
     //querySelector로 html 태그 불러오기
 
 form.addEventListener('submit', function(e) {
@@ -11,7 +11,7 @@ form.addEventListener('submit', function(e) {
 
     if (answer.innerText[answer.innerText.length - 1] === input.value[0]) {
         result.textContent = '정답입니다 계속 입력하세요.'
-        answer.innerText = input.value
+        answer.innerText = "제시어 : " + input.value
         input.value = ''
         input.focus()
     } else {
