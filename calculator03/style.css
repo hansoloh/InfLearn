@@ -40,6 +40,14 @@
     background: pink;
 }
 
+.calculator .button.clear:active {
+    background: lightslategray;
+}
+
 .calculator #equal {
     background: skyblue;
+}
+
+.calculator #equal:active {
+    background: lightslategray;
 }

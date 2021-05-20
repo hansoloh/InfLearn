@@ -5,7 +5,7 @@ buttons.map(button => {
     button.addEventListener('click', (e) => {
         switch (e.target.innerText) {
             case 'C':
-                display.innerText = '';
+                onclick = "reset()"
                 break;
             case '=':
                 display.innerText = Math.floor(eval(display.innerText));
