@@ -1,5 +1,5 @@
 h1 {
-    color: white;
+    color: antiquewhite;
     font-size: 25px;
 }
 
@@ -16,11 +16,12 @@ body {
     text-align: center;
     background-color: rgb(69, 118, 182);
     box-shadow: 3px 2px 2px lightslategray;
+    border-radius: 15px;
 }
 
 input {
     background-color: rgb(141, 181, 199);
-    color: antiquewhite;
+    color: white;
     height: 25px;
     width: 25px;
     border-radius: 50px;
@@ -39,4 +40,8 @@ input {
 #submit {
     background-color: darksalmon;
     border: 1px solid darksalmon;
+}
+
+#submit:hover {
+    background-color: crimson;
 }

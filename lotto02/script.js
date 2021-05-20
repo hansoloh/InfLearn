@@ -14,7 +14,6 @@ submit.addEventListener("click", function() {
     numberfive();
     numbersix();
     numberseven();
-
 })
 
 function numberone() {
