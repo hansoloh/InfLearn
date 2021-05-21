@@ -1,11 +1,12 @@
 let display = document.getElementById('display');
 let buttons = Array.from(document.getElementsByClassName('button'));
+const reset = document.getElementById('display').value="";
 
 buttons.map(button => {
     button.addEventListener('click', (e) => {
         switch (e.target.innerText) {
             case 'C':
-                onclick = "reset()"
+                display.innerText = reset();
                 break;
             case '=':
                 display.innerText = Math.floor(eval(display.innerText));
