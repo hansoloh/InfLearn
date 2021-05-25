@@ -37,12 +37,12 @@ form.addEventListener('submit', function(e) {
         }
         console.log(count);
 
-        input.value = ''
-        input.focus()
+        input.value = '';
+        input.focus();
 
     } else {
         result.textContent = '오답입니다 다시 입력하세요.'
-        input.select()
+        input.select();
     }
 
 })
