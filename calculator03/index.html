@@ -5,32 +5,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Document</title>
     <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
-        <div class="calculator">
-            <div id="display"></div>
-            <div class="buttons">
-                <button onclick="button" class="button">1</button>
-                <button onclick="button" class="button">2</button>
-                <button onclick="button" class="button">3</button>
-                <button onclick="button" class="button">+</button>
-                <button onclick="button" class="button">4</button>
-                <button onclick="button" class="button">5</button>
-                <button onclick="button" class="button">6</button>
-                <button onclick="" class="button">-</button>
-                <button onclick="button" class="button">7</button>
-                <button onclick="button" class="button">8</button>
-                <button onclick="button" class="button">9</button>
-                <button onclick="" class="button">*</button>
-                <button onclick="button" class="button">0</button>
-                <button onclick="reset" class="button clear">C</button>
-                <button onclick="calculate" class="button" id="equal">=</button>
-                <button onclick="button" class="button">/</button>
+    <div id="calculator">
+        <div>
+            <div>
+                <input id="display" type="text" />
+            </div>
+            <div>
+                <input id="result" type="text" />
+            </div>
+
+            <div>
+                <div class="buttonWrap">
+                    <button onclick="number(0)">0</button>
+                    <button onclick="reset()">C</button>
+                    <button onclick="calculate()">=</button>
+                    <button onclick="sign('+')">+</button>
+
+                </div>
+                <div class="buttonWrap">
+                    <button onclick="number(1)">1</button>
+                    <button onclick="number(2)">2</button>
+                    <button onclick="number(3)">3</button>
+                    <button onclick="sign('-')">-</button>
+                </div>
+                <div class="buttonWrap">
+                    <button onclick="number(4)">4</button>
+                    <button onclick="number(5)">5</button>
+                    <button onclick="number(6)">6</button>
+                    <button onclick="sign('*')">*</button>
+                </div>
+                <div class="buttonWrap">
+                    <button onclick="number(7)">7</button>
+                    <button onclick="number(8)">8</button>
+                    <button onclick="number(9)">9</button>
+                    <button onclick="sign('/')">/</button>
+                </div>
             </div>
         </div>
+    </div>
     <script src="script.js"></script>
 </body>
 
