@@ -1,11 +1,12 @@
-let click = true;
-let check = 0;
+let check = 0; //숫자 함수 입력 자릿수 카운팅 위한 변수
+let click = true; //부호 함수 체크 위한 boolean
 
-function number(num) {
+function number(num) { //숫자 함수
     if (check <= 2) {
         check++;
         let display = document.getElementById("display");
         display.value = display.value + num;
+        click = true; //여기에 click값 true 초기화해도 된다고? 왜?
     }
     console.log(check);
 }
@@ -16,7 +17,7 @@ function number(num) {
 //누르는 값 이어서 다 띄워줌
 //현재 check값은 3!
 
-function sign(sn) {
+function sign(sn) { //부호 함수
     if (click) {
         let display = document.getElementById("display");
         display.value = display.value + sn;
@@ -54,4 +55,6 @@ function reset() {
     
     //c로 눌러서 계산 재진행 다 가능 그런데
     //c 누르지 않고 결과값에서 바로 부호 입력이 불가능
+    //c 루느면 click=true로 바꿔줫는데 왜 안 되지. c를 안 누른 상황이기 때문 click이 아직 false.
+    //그럼 c를 안눌렀을때/ 바로 연산 부호 누를 때. 어디지
 }
