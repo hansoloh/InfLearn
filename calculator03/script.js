@@ -1,14 +1,17 @@
 let check = 0; //숫자 함수 입력 자릿수 카운팅 위한 변수
-//let click = true; //부호 함수 체크 위한 boolean
+let click = true; //부호 함수 체크 위한 boolean
+const result = []; //결과값 담아줄 배열
 
 function number(num) { //숫자 함수
     if (check <= 2) {
         check++;
         let display = document.getElementById("display");
         display.value = display.value + num;
-        click = true; //여기에 click값 true 초기화해도 된다고? 왜?
+        result.push(num);
+        //click = true; //여기에 click값 true 초기화해도 된다고? 왜?
     }
-    //console.log(check);
+    console.log(result);
+    console.log(check);
 }
 
 //숫자 입력이 2보다 작거나 같을 때
@@ -18,14 +21,21 @@ function number(num) { //숫자 함수
 //현재 check값은 3!
 
 function sign(sn) { //부호 함수   
-    //if (click) {
-        let display = document.getElementById("display");
-        display.value = display.value + sn;
-        //click = false;
-        check=0;       
-    // } else {
-    //      console.log("부호 입력 끝");        
-    // }
+    if (click = true) {
+        if (-1 < result[result.length - 1] && result[result.length - 1] < 10) { //마지막 인덱스 값이 숫자면
+            let display = document.getElementById("display");
+            display.value = display.value + sn;
+            result.push(sn);
+            console.log(result[result.length - 1]);
+        } else { //마지막 인덱스 부호면 
+            let display = document.getElementById("display");
+            console.log('배열로 마지막 인덱스를 지금 입력한 부호로 교체');
+            result[result.length - 1] = sn;
+            //display.value[display.value.length - 1] = sn;
+            display.value = result.join("");
+        }
+        check = 0;
+    }
 }
 
 //숫자 부호 입력 후 숫자 다시 입력되게...
@@ -46,12 +56,14 @@ function reset() {
     let displayResult = document.getElementById("result");
     displayResult.value = "";
 
-    check=0; 
-    click=true; 
+    check = 0;
+    result.length = 0;
+
+    //click = true;
     //숫자 부호 숫자 결과 c누르면 리셋까지 됨. check랑click=0이라서 다시 계산 시작 가능.
     //두번째 계산 : 처음 숫자 세자리 입력 가능. 부호 입력 안됨. 부호 입력 끝남. click=false라서
     //sign=0; 리셋해줘야되는데 어디에서?  click을 true로 리셋.
-    
+
     //c로 눌러서 계산 재진행 다 가능 그런데
     //c 누르지 않고 결과값에서 바로 부호 입력이 불가능
     //c 루느면 click=true로 바꿔줫는데 왜 안 되지. c를 안 누른 상황이기 때문 click이 아직 false.
