@@ -1,5 +1,5 @@
 let check = 0; //숫자 함수 입력 자릿수 카운팅 위한 변수
-let click = true; //부호 함수 체크 위한 boolean
+//let click = true; //부호 함수 체크 위한 boolean
 const result = []; //결과값 담아줄 배열
 
 function number(num) { //숫자 함수
@@ -21,26 +21,25 @@ function number(num) { //숫자 함수
 //현재 check값은 3!
 
 function sign(sn) { //부호 함수   
-    if (click = true) {
-        if (-1 < result[result.length - 1] && result[result.length - 1] < 10) { //마지막 인덱스 값이 숫자면
+    //if (click = true) {
+        if (-1 < result[result.length - 1] && result[result.length - 1] < 10) { //마지막 인덱스 값이 숫자면 (0~9까지 숫자를 눌렀을때)
             let display = document.getElementById("display");
             display.value = display.value + sn;
             result.push(sn);
             console.log(result[result.length - 1]);
-        } else { //마지막 인덱스 부호면 
+        } else { //마지막 인덱스 값이 부호면 
             let display = document.getElementById("display");
-            console.log('배열로 마지막 인덱스를 지금 입력한 부호로 교체');
+            console.log('마지막 인덱스를 지금 입력한 부호로 교체');
             result[result.length - 1] = sn;
             //display.value[display.value.length - 1] = sn;
             display.value = result.join("");
         }
         check = 0;
     }
-}
+//}
 
 //숫자 부호 입력 후 숫자 다시 입력되게...
 //check값 현재 3 이라서 부호 1번 입력 후 숫자 입력이 안됨 -> check=0; 리셋? 어디서?
-
 //숫자 3자리, 부호 1개, 숫자 3자리까지 누르면 그대로 끝 반복 진행 안됨. -> 또 리셋해주기? 어디서?
 
 function calculate() {
@@ -57,7 +56,7 @@ function reset() {
     displayResult.value = "";
 
     check = 0;
-    result.length = 0;
+    result.length = 0; //result=[];로 리셋안됨....부호 눌러서 배열에 문자 들어가서인...가...?
 
     //click = true;
     //숫자 부호 숫자 결과 c누르면 리셋까지 됨. check랑click=0이라서 다시 계산 시작 가능.
