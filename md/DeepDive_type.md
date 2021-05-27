@@ -1,0 +1,66 @@
+### JS
+- 객체 기반의 언어. 객체로 이루어짐.
+- 위 6가지 타입을 제외하고는 모두 <b><u>객체 타입</u></b>
+- case-sensitive 대소문자 구별
+- declaration 변수를 선언
+- definition 함수를 정의
+- 정적 타입 언어 static / strong type ; C JAVA C++ Go Kotlin Scala Rust Haskell
+  - 변수 선언 시 데이터 타입을 선언. 변수 타입 변경 불가.
+- 동적 dynamic / weak type ; JS Python PHP Ruby Perl Lisp
+  - JS는 변수 선언 시 타입 선언 x. 어떤 타입이든 할당 가능. (typeof연산자로 테이터 타입 탐색). 변수의 재할당에  의해 타입이 얼마든지 동적으로 변함.
+  - flexible but unreliable
+  - 변수 사용 시 주의사항
+    - 꼭 필요시 제한적으로 사용. 변수 개수 up, 오류 발생 확률 up. 최소한의 변수 유지.
+    - 변수의 유효 범위 scope 최대한 좁게 만들어 부작용 억제
+    - 전역 변수 최대한 사용 x; 어디서든지 참조 변경 가능하여 의도치 않게 값이 변경될 수도 있고 다른 코드에 영향 줄 가능성도 up 프로그램 복잡성 up 처리 흐름 추적 어려움. 오류 발생 시 원인 찾기 힘듦.
+    - 변수보단 상수 const 사용
+    - 변수 naming
+### Data Type
+----
+- 원시 타입 primitive type
+  - number
+    -  모든 수가 실수. 산술 연산 목적.
+    -  intinity
+    - infinity
+    - NaN(not a number)
+  - string
+    - '' "" ``
+    - UTF-16
+    - 텍스트 데이터 화면에 출력.
+    - immutable value 변경 불가능한 값 ; 문자열 생성되고 나면 변경 불가.
+    - 템플릿 리터럴 template literal 문자열 표기법 ``
+      - 멀티라인 문자열 multi-lin string
+      - 표현식 삽입 expression interpolation
+      - 태그드 템플릿 tagged template
+  - boolean
+    - true false
+    - 조건문
+  - undefined
+    - var로 선언된 변수에 할당되는 값
+       - var ex; console.log(ex)=undefined; 
+    - undefined로 return되면 초기화되지 않은 변수라는 뜻
+    - undefined로 할당하지 않는다. 값 할당하기 전 이미 undefined로 초기화되어 있음.
+    - 변수에 값이 없다 = null
+  - null
+    - 변수에 값이 없다는것을 의도적으로 명시. intentional absence
+    - 변수가 이전에 참조하던 값을 더 이상 참조하지 않겠음. 이전 참조값 제거.
+  - symbol
+    - 변경 불가. 유일하게 다른 값과 중복값 x.
+    - 객체의 유일한 프로퍼티 키 만들기 위해 사용.
+- 객체 타입 object/ reference type 
+  - 객체 함수 배열 등
+-----------
+### 연산자 Operator
+- 산술 연산자
+  - 이항
+  - 단항
+  - 문자열 연결 
+- 할당 
+- 비교 
+- 삼항 조건
+- 논리
+- 쉼표
+- 그룹
+- typeof
+- 지수
+
