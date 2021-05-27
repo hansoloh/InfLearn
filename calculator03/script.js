@@ -11,7 +11,7 @@ function number(num) { //숫자 함수
         //click = true; //여기에 click값 true 초기화해도 된다고? 왜?
     }
     console.log(result);
-    console.log(check);
+    //console.log(check);
 }
 
 //숫자 입력이 2보다 작거나 같을 때
@@ -26,13 +26,16 @@ function sign(sn) { //부호 함수
             let display = document.getElementById("display");
             display.value = display.value + sn;
             result.push(sn);
-            console.log(result[result.length - 1]);
+            console.log(result[result.length - 1]); 
         } else { //마지막 인덱스 값이 부호면 
             let display = document.getElementById("display");
-            console.log('마지막 인덱스를 지금 입력한 부호로 교체');
-            result[result.length - 1] = sn;
+            //console.log('마지막 인덱스를 지금 입력한 부호로 교체');
+            result[result.length - 1] = sn; //마지막 인덱스를 지금 입력한 부호sn로 교체
             //display.value[display.value.length - 1] = sn;
-            display.value = result.join("");
+            console.log(display.value); 
+            //배열에는 부호 바뀜! ! display에 안바뀜 
+            //display.value = result; //결과값이 배열로 나옴..., , ,지우기...
+            display.value = result.join(""); 
         }
         check = 0;
     }
@@ -56,7 +59,10 @@ function reset() {
     displayResult.value = "";
 
     check = 0;
-    result.length = 0; //result=[];로 리셋안됨....부호 눌러서 배열에 문자 들어가서인...가...?
+
+    //c 리셋하면 display에는 지워지는데 배열은 이어서 담아짐. 배열 리셋 
+    //result=[];로 리셋안됨....부호 눌러서 배열에 문자 들어가서인...가...?
+    result.length = 0; //.....되다니
 
     //click = true;
     //숫자 부호 숫자 결과 c누르면 리셋까지 됨. check랑click=0이라서 다시 계산 시작 가능.
