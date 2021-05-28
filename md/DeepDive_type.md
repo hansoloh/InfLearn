@@ -22,7 +22,7 @@
     -  모든 수가 실수. 산술 연산 목적.
     -  intinity
     - infinity
-    - NaN(not a number)
+    - NaN(not a number) ; 자신과 일치하지 않는 유일한 값
   - string
     - '' "" ``
     - UTF-16
@@ -51,16 +51,29 @@
   - 객체 함수 배열 등
 -----------
 ### 연산자 Operator
-- 산술 연산자
-  - 이항
-  - 단항
-  - 문자열 연결 
-- 할당 
-- 비교 
-- 삼항 조건
-- 논리
-- 쉼표
-- 그룹
-- typeof
-- 지수
-
+- 산술 연산자 arithmetic operator
+  - 이항 binary + - * / %나머지
+  - 단항 unary ++ -- +효과 없음 -양수<->음수 전환
+  - 문자열 연결 +
+- 할당 =
+- 비교 comparison operator ; 값을 비교하여 결과값을 boolean으로 return. 
+  - <del>동등 비교 == loose equality</del> ; 다른 타입도 암묵적 타입 변환으로 결과값 도출할 수 있으나 anti pattern이 될수 있으므로 사용 지양.
+  - 일치 비교 strict equality<b><u>===</u></b> ; 비교값의 type까지 비교!
+  - 부동등 비교 !=
+- 삼항 조건 연산자 ternary operator 
+  - 조건식을 평가하며 반환값 return
+  - JS의 유일한 삼항 연산자
+  - var result = 조건식 ? 'true' : 'false';
+  - 조건식이 true이면 : 앞의 값 return
+  - 조건식이 false이면 : 뒤의 값 return
+- 논리 ||or && !not ; 결과값을 boolean으로 return
+- 쉼표 ; 왼쪽부터 차례대로 ~ 마지막 값 return
+- 그룹 () ; 연산자 우선순위 조절. 그룹 연산자가 연산자 우선순위 최상.
+- 타입 typeof ; string number boolean un defined symbol object function
+- 지수 ** ; 좌항의 피연산자 밑base, 우항은 지수exponent 제곱
+  - Math.pow() method
+- etc : ?. ?? delete new instanceof in
+- 부수 효과 ; 연산자는 일반적으로 다른 코드에 영향x
+  - = ++ -- delete 는 부수 효과 o
+- 우선 순위 p91
+- 결합 순서 p92

@@ -87,7 +87,8 @@ cf) 텍스트 요소 중앙 배치 : text-align<br>
 *{box-sizing : border-box;}<br>
 ul{list-style : none;}<br>
 li{display : inline-block;} = {float : left;}
-- 리스트를 가로로 배치하는 속성은 같으나 inline-block은 마진패딩 o,  float 은 마진패딩x 지정 필요함. 지정 후에는 clear로 float 해제도 필요.<br>
+
+- <b><u>리스트를 가로로 배치하는 속성</u></b>은 같으나 <i>inline-block</i>은 마진패딩 o,  <i>float</i> 은 마진패딩x 지정 필요함. 지정 후에는 clear로 float 해제도 필요.<br>
 #box1{float : left;}<br>
 
 ### float
@@ -113,6 +114,9 @@ li{display : inline-block;} = {float : left;}
             left : 50px;<br>
             bottom : 100px; }
 
-- position : absolute를 사용해 위치를 지정할 때는 <u><i>기준이 되는 요소</i></u>에 position : relative 사용해야 함!
+- <b>position : absolute</b>를 사용해 위치를 지정할 때는 <u><i>기준이 되는 요소</i></u>에 <b>position : relative</b> 사용해야 함!
+
 - static
 - fixed
+
+
