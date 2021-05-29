@@ -42,6 +42,7 @@ p280
 - :enabled :disabled
 - :checked
 - :not
+- 순서 : link visited hover active (LoVeHAte)
 
 ### 구조 가상 클래스
 ---
