@@ -19,7 +19,18 @@
         else
             rowNum = parseInt(memNum / colNum) + 1;
 
-        document.write("모두 " + rowNum + "개의 줄이 필요");
+        //document.write("모두 " + rowNum + "개의 줄이 필요");
+
+        var i, j;
+        for (i = 0; i < rowNum; i++) {
+            for (j = 1; j <= colNum; j++) {
+                seatNo = i * colNum + j; //좌석 번호 지정
+                if (seatNo > memNum) //좌석 번호가 인원수보다 많으면 반복문 종료
+                    break;
+                document.write("좌석" + seatNo + " ");
+            }
+            document.write("<br>");
+        }
     </script>
 
 </body>
