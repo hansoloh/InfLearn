@@ -10,18 +10,29 @@
 
 <body>
     <script>
-        var num1 = prompt("첫번째 숫자입력");
-        var num2 = prompt("두번째 숫자입력");
+        var num1 = parseInt(prompt("첫번째 숫자입력"));
+        var num2 = parseInt(prompt("두번째 숫자입력"));
 
-        //if (num1 !== null && num2 !== null) {
-        if (num1 > num2) {
-            document.write(num1 + "이 " + num2 + "보다 큼");
-        } else if (num1 == num2) {
-            document.write(num1 + " = " + num2);
-        } else
-            document.write(num2 + "이 " + num1 + "보다 큼");
-        //} else
-        // document.write("숫자를 입력하세요");
+        compare(num1, num2);
+
+        function compare(x,y){
+            if(x > y){
+                document.write(num1 + "이 " + num2 + "보다 큼");
+            }
+            else if(x == y){
+                document.write(num1 + " = " + num2);
+            }
+            else{
+                document.write(num2 + "이 " + num1 + "보다 큼");
+            }
+        }
+
+        // if (num1 > num2) {
+        //     document.write(num1 + "이 " + num2 + "보다 큼");
+        // } else if (num1 == num2) {
+        //     document.write(num1 + " = " + num2);
+        // } else
+        //     document.write(num2 + "이 " + num1 + "보다 큼");
     </script>
 </body>
 
