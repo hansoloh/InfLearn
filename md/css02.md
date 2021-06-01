@@ -1,5 +1,5 @@
 - *전체 선택자에 margin padding 0으로 웹 문서 여백 없애서 이미지가 웹 브라우저 창에 딱 붙어서 나타남
----
+
 ### text
 ---
 - font-family 글꼴
@@ -94,29 +94,25 @@ li{display : inline-block;} = {float : left;}
 ### float
 ---
 - 웹 요소를 문서 위에 float 하게 = 왼,오른쪽 구석에 배치
-  - left
-  - right
-  - none
+  - left right none
 
 ### clear
 ---
 - float 해제
-  - left
-  - right
-  - both
+  - left right both
 
 ### position
 ---
 - absolute
-   - left right tom bottom
    -  ex) #pos1{<br>
             position : absoulute;<br>
             left : 50px;<br>
             bottom : 100px; }
 
 - <b>position : absolute</b>를 사용해 위치를 지정할 때는 <u><i>기준이 되는 요소</i></u>에 <b>position : relative</b> 사용해야 함!
-
+relative를 사용한 요소를 기준으로 위치 결정.
 - static
-- fixed
+- fixed   
+- position 속성 선택 후에 left right tom bottom로 위치 지정
 
 

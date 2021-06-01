@@ -58,7 +58,7 @@
   - 익명 함수
   - 즉시 실행 함수
   - <u><b><i>화살표 함수</u></b></i> ; 익명 함수에서만 쓸수 있음. p537
-    - let/const 함수명 = (매개변수) => 함수식
+    - let/const 함수명 = (매개변수) => {함수식}
 - 이벤트 ; 마우스 키보드 문서로딩 폼 이벤트
 - 이벤트 처리기/ 이벤트 핸들러; 이벤트가 발생하면 처리하는 함수
 
@@ -108,12 +108,17 @@
 - <u><b><i>CSS 속성 수정 : document.요소명.styel.속성명</u></b></i>
   - document.getElementById("id").style.color = "blue";
 - <u><b><i>텍스트 노드 추가 : createElement() - createTextNode() - appendChild() - appendChild()(연결)</u></b></i>
-  - return false : button 기본 기능 submit 끄고 <u><b><i>함수만</i></u></b> 실행하도록 작성
-  - onclick="addP(); this.onclick='';" addP() <u><b><i>함수 한 번만</i></u></b> 실행
-  - itemList.insertBefore(newInput, itemList.childNodes[0]); //마지막 입력값 맨 위에 표시
 - <u><b><i>속성값 있는 노드 추가 : createElement() - createAttribute() - setAttributeNode() - appendChild()</u></b></i>
 - 노드 삭제 : 부모 노드 찾아서 자식 노드 삭제해야 함
   - 부모 노드 접근 : 노드.parentNode
   - 부모노드.removeChild(자식노드)
 
 ---
+  - return false : button 기본 기능 submit 끄고 <u><b><i>함수만</i></u></b> 실행하도록 작성
+  - onclick="addP(); this.onclick='';" addP() <u><b><i>함수 한 번만</i></u></b> 실행
+  - itemList.insertBefore(newInput, itemList.childNodes[0]); //마지막 입력값 맨 위에 표시
+  - onclick addeventlistener 차이
+    - document.getElementById('trigger').onclick = () => {
+    alert('hello!');} 중복 사용 불가. 덮어쓰기.
+    - document.getElementById('trigger').addEventListener('click',()=>{
+    alert('hello!'); 여러 개 계속 쓸수 있음. 누적.

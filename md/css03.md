@@ -1,4 +1,4 @@
-p280
+
 - background-color
 - background-clip
   - border-box ; 테두리까지 배경 지정
@@ -47,8 +47,9 @@ p280
 
 ### 구조 가상 클래스 p343 
 ---
-- :only-child
-- A:only-type-of
+- .contents:nth-child(x); contents의 ***모든*** 자식 요소 중 x번째
+  - nth-child(2n+1); 수식,add,odd 가능.
+- .contents div:nth-type-of(x); contents의 div 자식 요소 중에서 x번째
 
 ### 가상 요소
 ---
