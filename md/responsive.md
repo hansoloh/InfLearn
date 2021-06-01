@@ -9,7 +9,7 @@
   - 모바일 퍼스트 기법; 모바일용 css는 태블릿, 데스크톱에도 기본으로 적용되므로 모바일 레이아웃을 기본으로 CSS 완성. 이후 태블릿, 데스크톱에 맞춰 기능, 스타일 추가하는 방식.
 - 플렉서블 박스 레이아웃
   - 수평or수직 중 한 쪽을 주축으로 박스를 배치.
-  - display; 플렉스 컨테이너로 묶고 display로 지정해야 함.
+  - display; 플렉스 컨테이너로 묶고 display로 지정해야 함. display=flex;
   - flex-direction ; 주축과 방향 지정
   - flex-wrap; 줄 바꾸기
   - flex-flow; direction+wrap 한번에 지정. 배치 방향 결정, 줄 바꿈.
@@ -20,5 +20,11 @@
   - 항상 중앙에 표시 ; {display:flex; justify-content:center; align-items:center; min-height:100vh;}
 
 - CSS 그리드 레이아웃
-  - 가로 줄row 세로 컬럼colulmn 모두 사용해서 배치. 2차원. 레고식.
-  - 
+  - 가로 줄row 세로 컬럼colulmn 모두 사용해서 배치. 2차원. 레고식. display=grid; 단위 fr.
+  - grid-template-columns: repeat(3,1fr); 같은 크기 컬럼 3개
+  - auto-fit(남는 공간 없음) auto-fill(남는 공간 그대로 둠)
+  - grid-gap : 20px(row) 30px(column); rem
+  - 그리드 라인으로 항목 배치, 시작과 끝 번호 지정.
+    - grid-row-start grid-column-end
+  - 템플릿 영역 grid-area
+    - 그리드 컨테이너 요소에 grid-template-area : "한 줄" "한 줄" " ." 비워둘 영역은 .

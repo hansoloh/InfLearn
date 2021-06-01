@@ -31,7 +31,7 @@ p280
     - 요소1 ~ 요소2 ; 모든 형제 요소 선택
     - h1 ~ p ; h1뒤에 오는 모든 p를 선택
 
-### 속성 선택자
+### 속성 선택자 10-2 p326
 ---
   - []
 
@@ -45,14 +45,14 @@ p280
 - :not
 - 순서 : link visited hover active (LoVeHAte)
 
-### 구조 가상 클래스
+### 구조 가상 클래스 p343 
 ---
 - :only-child
 - A:only-type-of
 
 ### 가상 요소
 ---
-- ::first-line
-- ::first-letter
-- ::before
-- ::after
+- ::first-line; 첫번째 줄 선택
+- ::first-letter ; 첫번째 줄의 첫 글자
+- ::before; 앞에 내용 추가
+- ::after; 뒤에
