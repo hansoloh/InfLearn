@@ -4,13 +4,42 @@
     <meta charset="UTF-8">
     <title>사이트 만들기</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <meta name="description" content="온라인 강의 리스트"/>
     <meta name="keywords" content="잔재미 코딩, 온라인 강의, IT 강의, 파이썬, 풀스택, 데이터 분석, 데이터 과학"/>
     <meta name="author" content="Hansol Oh"/>
 
+    <!-- Open Graph (Facebook Linkedin) -->
+    <meta property="og:type" content="website"/> 
+    <meta property="og:title" content="온라인 강의 사이트입니다"/> 
+    <meta property="og:description" content="온라인 강의 리스트를 공유하는 웹페이지입니다"/> 
+    <meta property="og:image" content="img/fun-coding-mark.png"/> 
+    <meta property="og:url" content="https://www.fun-coding.org"/> 
+    <meta property="og:site_name" content="코딩사이트"/> 
+
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary"/>  
+    <!-- card 종류: summary photo player -->
+    <meta name="twitter:title" content="온라인 강의 사이트입니다"/>  
+    <meta name="twitter:description" content="온라인 강의 리스트를 공유하는 웹페이지입니다"/>  
+    <meta name="twitter:image" content="img/fun-coding-mark.png"/>  
+    <meta name="twitter:url" content="https://www.fun-coding.org"/>  
+    <meta name="twitter:creator" content="Hansol Oh">  
+
+    <!-- 일반적인 fabicon 설정 -->
     <link rel="icon" href="../img/fun-coding.ico"/>
+    <!-- 아이폰용 fabicon 설정 -->
+    <link rel="icon" href="../img/fun-coding.ico"/>
+    <!-- IE용 fabicon 설정 -->
+    <link rel="icon" type="../image/x-icon" href="img/fun-coding.ico"/>    
+
+    <!-- CSS Reset
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+    <link rel="css/normalize.css"/> -->
+    <script src="https://kit.fontawesome.com/f1def33959.js" crossorigin="anonymous"></script>
+    <!-- <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" type="text/css"/> -->
     <link rel="stylesheet" href="../css/style.css" />
+    
 </head>
 <body>
     <header>
@@ -21,10 +50,272 @@
             </div>
         </div>
     </header>
-
     <!-- 메인 이미지 섹션 -->
-    <section class="main"></section>
-    <footer></footer>
-    
+    <section class="main">
+        <div class="main-container">
+            <div class="inner">
+                <div class="title-container">
+                    <div class="title">광고보다 강의에 집중합니다.</div>
+                    <div class="message">
+                        전자책보다 좋은 자료와<br>
+                        현엽의 경험으로<br>
+                        검증된 온라인 강의를<br>
+                        검증된 플랫폼에서 제공합니다<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="inner">
+            <div class="skill-container">
+                <div class="skill">
+                    <i class="fab fa-python skill-icon python-style"></i>
+                    <div class="skill-title">
+                        <div class="skill-name">업무 자동화</div>
+                        <div class="skill-usage">크롤링/자동매매</div>
+                    </div>  
+                </div>
+                <div class="skill">
+                    <i class="far fa-chart-bar skill-icon analysis-style"></i>
+                    <div class="skill-title">
+                        <div class="skill-name">데이터 분석</div>
+                        <div class="skill-usage">데이터 분석/SQL</div>
+                    </div>  
+                </div>
+                <div class="skill">
+                    <i class="fab fa-app-store-ios skill-icon ai-style"></i>
+                    <div class="skill-title">
+                        <div class="skill-name">AI</div>
+                        <div class="skill-usage">인공지능 활용</div>
+                    </div>  
+                </div>
+                <div class="skill">
+                    <i class="fab fa-vuejs skill-icon vue-style"></i>
+                    <div class="skill-title">
+                        <div class="skill-name">풀스택</div>
+                        <div class="skill-usage">웹/앱 서비스</div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="inner">
+            <div class="roadmap-container">
+                <div class="roadmap-title-container">
+                    <div class="roadmap-title">관련 블로그 및 서적</div>
+                        <div class="arrow-container">
+                            <i class="fas fa-chevron-circle-left slide-prev"></i>
+                            <i class="fas fa-chevron-circle-right slide-next"></i>
+                        </div>
+                </div>
+                <ul class="class-list">
+                    <li class="class-card">                                               
+                        <img src="../img/blog.jpg" alt="블로그" class="class-image">
+                        <a href="#" target="_blank">
+                        <div class="class-container">
+                            <div class="class-skill">
+                                <div class="class-type">학습방법</div>
+                                <div class="class-format">블로그</div>
+                            </div>
+                            <div class="class-desc">
+                                <div class="class-title">IT는 배우는 방법을 익혀야 합니다</div>
+                                <div class="class-detail">비전공자가 IT를 배우는 전략</div>
+                            </div>
+                        </div>
+                    </a>
+                    </li>
+                    <li class="class-card">
+                        <img src="../img/blog.jpg" alt="블로그" class="class-image">
+                        <div class="class-container">
+                            <div class="class-skill">
+                                <div class="class-type">학습방법</div>
+                                <div class="class-format">블로그</div>
+                            </div>
+                            <div class="class-desc">
+                                <div class="class-title">IT는 배우는 방법을 익혀야 합니다</div>
+                                <div class="class-detail">비전공자가 IT를 배우는 전략</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="class-card">
+                        <img src="../img/blog.jpg" alt="블로그" class="class-image">
+                        <div class="class-container">
+                            <div class="class-skill">
+                                <div class="class-type">학습방법</div>
+                                <div class="class-format">블로그</div>
+                            </div>
+                            <div class="class-desc">
+                                <div class="class-title">IT는 배우는 방법을 익혀야 합니다</div>
+                                <div class="class-detail">비전공자가 IT를 배우는 전략</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="class-card">
+                        <img src="../img/blog.jpg" alt="블로그" class="class-image">
+                        <div class="class-container">
+                            <div class="class-skill">
+                                <div class="class-type">학습방법</div>
+                                <div class="class-format">블로그</div>
+                            </div>
+                            <div class="class-desc">
+                                <div class="class-title">IT는 배우는 방법을 익혀야 합니다</div>
+                                <div class="class-detail">비전공자가 IT를 배우는 전략</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="class-card">
+                        <img src="../img/blog.jpg" alt="블로그" class="class-image">
+                        <div class="class-container">
+                            <div class="class-skill">
+                                <div class="class-type">학습방법</div>
+                                <div class="class-format">블로그</div>
+                            </div>
+                            <div class="class-desc">
+                                <div class="class-title">IT는 배우는 방법을 익혀야 합니다</div>
+                                <div class="class-detail">비전공자가 IT를 배우는 전략</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="inner">
+            <div class="roadmap-container">
+                <div class="roadmap-title-container">
+                    <div class="roadmap-title">데이터 분석/예측 로드맵 <span class="roadmap-desc">(데이터 분석가/과학자 커리어 과정)</span></div>
+                        <div class="arrow-container">
+                            <i class="fas fa-chevron-circle-left slide-prev"></i>
+                            <i class="fas fa-chevron-circle-right slide-next"></i>
+                        </div>
+                </div>
+                <ul class="class-list">
+                    <li class="class-card">
+                        <img src="../img/blog.jpg" alt="블로그" class="class-image">
+                        <div class="class-container">
+                            <div class="class-skill">
+                                <div class="class-type">학습방법</div>
+                                <div class="class-format">블로그</div>
+                            </div>
+                            <div class="class-desc">
+                                <div class="class-title">IT는 배우는 방법을 익혀야 합니다</div>
+                                <div class="class-detail">비전공자가 IT를 배우는 전략</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="class-card">
+                        <img src="../img/blog.jpg" alt="블로그" class="class-image">
+                        <div class="class-container">
+                            <div class="class-skill">
+                                <div class="class-type">학습방법</div>
+                                <div class="class-format">블로그</div>
+                            </div>
+                            <div class="class-desc">
+                                <div class="class-title">IT는 배우는 방법을 익혀야 합니다</div>
+                                <div class="class-detail">비전공자가 IT를 배우는 전략</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="class-card">
+                        <img src="../img/blog.jpg" alt="블로그" class="class-image">
+                        <div class="class-container">
+                            <div class="class-skill">
+                                <div class="class-type">학습방법</div>
+                                <div class="class-format">블로그</div>
+                            </div>
+                            <div class="class-desc">
+                                <div class="class-title">IT는 배우는 방법을 익혀야 합니다</div>
+                                <div class="class-detail">비전공자가 IT를 배우는 전략</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="class-card">
+                        <img src="../img/blog.jpg" alt="블로그" class="class-image">
+                        <div class="class-container">
+                            <div class="class-skill">
+                                <div class="class-type">학습방법</div>
+                                <div class="class-format">블로그</div>
+                            </div>
+                            <div class="class-desc">
+                                <div class="class-title">IT는 배우는 방법을 익혀야 합니다</div>
+                                <div class="class-detail">비전공자가 IT를 배우는 전략</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="class-card">
+                        <img src="../img/blog.jpg" alt="블로그" class="class-image">
+                        <div class="class-container">
+                            <div class="class-skill">
+                                <div class="class-type">학습방법</div>
+                                <div class="class-format">블로그</div>
+                            </div>
+                            <div class="class-desc">
+                                <div class="class-title">IT는 배우는 방법을 익혀야 합니다</div>
+                                <div class="class-detail">비전공자가 IT를 배우는 전략</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="inner">
+            <div class="roadmap-container">
+                <div class="roadmap-title-container">
+                    <div class="roadmap-title">개발자 핵심 역량 로드맵 <span class="roadmap-desc">(꼭 익혀둬야할 핵심 기본기)</span></div>
+                        <div class="arrow-container">
+                            <i class="fas fa-chevron-circle-left slide-prev"></i>
+                            <i class="fas fa-chevron-circle-right slide-next"></i>
+                        </div>
+                </div>
+                <ul class="class-list">
+                    <li class="class-card">
+                        <img src="../img/blog.jpg" alt="블로그" class="class-image">
+                        <div class="class-container">
+                            <div class="class-skill">
+                                <div class="class-type">학습방법</div>
+                                <div class="class-format">블로그</div>
+                            </div>
+                            <div class="class-desc">
+                                <div class="class-title">IT는 배우는 방법을 익혀야 합니다</div>
+                                <div class="class-detail">비전공자가 IT를 배우는 전략</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="class-card">
+                        <img src="../img/blog.jpg" alt="블로그" class="class-image">
+                        <div class="class-container">
+                            <div class="class-skill">
+                                <div class="class-type">학습방법</div>
+                                <div class="class-format">블로그</div>
+                            </div>
+                            <div class="class-desc">
+                                <div class="class-title">IT는 배우는 방법을 익혀야 합니다</div>
+                                <div class="class-detail">비전공자가 IT를 배우는 전략</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="inner">
+            <div class="footer-message">좋은 컨텐츠가 지속될수 있는<br>선순환 시스템을 지향합니다</div>
+            <div class="footer-contact">dream@gamail.com</div>
+            <div class="footer-copyright">Copyright 2021@All rights reserved.</div>
+        </div>
+    </footer>
+    <a id="backtotop"></a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    <!-- ES6 지원 안되는 부분 위해서 위아래에 babel 넣어줌 -->
+    <script type="text/babel" src="../js/main.js"></script>    
 </body>
 </html>

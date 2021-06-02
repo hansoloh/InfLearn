@@ -3,7 +3,7 @@
 }
 body{
     margin: 0 auto;
-    color:  ;
+    color: #3f464d;
     font-family: "Spoqa Han Sans Neo", "Sans-serif";    
 }
 
@@ -31,6 +31,8 @@ a:hover{
     width: 100%;
     height: 100%;
     margin: 0 auto;    
+    padding: 0 2rem;
+    overflow: hidden;
 }
 
 header{
@@ -79,11 +81,333 @@ section{
 .main{
     height: 360px;
     background-image: url("../img/main.jpg");
+    background-size: cover;
+    background-position: center 10%;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+/* 컨테이너 하나 더 만들어서 사이즈 똑같이 투명도 주기 */
+.main-container{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(47, 48, 89);
+    opacity: 0.8;    
+    z-index: 2;
+    margin-top: 60px;
+}
+.title-container{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.title{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.8rem;
+}
+.message{
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: #fff;
+    line-height: 2rem;
 }
 
+.skill-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    /* 사이 간격 */
+    align-items: center;
+    /* 수직 정렬 */
+    padding: 1rem 0 ;
+    /* 아래가 짤려서 패딩값 추가 */
+}
+.skill{
+    width: 25%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 9px;
+    padding: 0.5rem 1rem;
+    margin: 0 1rem;
+    box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
+    transition: 0.4s;
+}
+.skill:hover{
+    transform: translate(0, -5px);
+}
+
+.skill-icon{
+    font-size: 2.5rem; 
+    margin: 7px;
+}
+.skill-title{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.skill-name{
+    font-weight: bold;
+    color: #545e6f;
+    margin-bottom: 0.2rem;
+}
+.skill-usage{
+    font-size: 0.9rem;
+    color: #545e6f;
+}
+.python-style{
+    color: #2486c4;
+}
+.analysis-style{
+    color: #ff8066;
+}
+.ai-style{
+    color: #f7df1e;
+}
+.vue-style{
+    color: #2e7d32;
+}
+.roadmap-container{
+    width: 100%;
+    margin-top: 2rem;
+}
+.roadmap-title-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.roadmap-title{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #545e6f;
+}
+.slide-prev{
+    font-size: 2rem;
+    cursor: pointer;
+    color: rgb(47, 48, 89);
+}
+.slide-next{
+    font-size: 2rem;
+    cursor: pointer;
+    color: #cfd8dc;
+}
+/* 방향아이콘 fas 속성이 inline-block이었음 버튼 두개 떨어져 보임
+arrowcontainer통째로 flex 속성 추가해주기 */
+.arrow-container{
+    display: flex;
+}
+
+.class-list{
+    display: flex;
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+    overflow: hidden;
+}
+.class-card{
+    /* width: 240px; */
+    box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
+    border-radius: 8px;
+    margin: 0 10px;
+    transition: 0.4s;
+    /* 크로스 브라우징 */
+    flex-shrink: 0;
+    max-width: 240px;
+}
+.class-card:hover{
+    box-shadow: 10px 10px 10px 0px rgba(25, 42, 70, 0.2);
+    transform: translate(0,-5px);
+}
+
+
+.class-image{
+    max-width: 240px;
+    border-radius: 8px 8px 0 0;
+    /* height: 150px; 
+    크로스 브라우징을 위해 정해진 높이 삭제
+    width->max-width로 변경*/
+}
+.class-container{
+    width: 100%;
+    padding: 0.5rem 1rem 1rem 1rem ;
+}
+.class-skill{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.class-type{
+    font-size: 0.9rem;
+}
+.class-format{
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #0d47a1;
+    padding: 0.2rem;
+}
+.class-desc{
+    width: 100%;
+    margin-top: 1rem;
+    color: #545e6f;
+}
+.class-desc:hover{
+    color: #2186c4;
+}
+/* hover 색상값 받아오기 위해 -title -detail에 color: inherit; 지정 */
+.class-title{
+    font-weight: bold;
+    color: inherit;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.5rem;
+}
+.class-detail{
+    font-size: 0.9rem;
+    color: inherit;
+    line-height: 1.5rem;
+}
+.roadmap-desc{
+    display: visual;
+}
+
+li a:hover{
+    cursor: pointer;
+}
+
+/* footer */
+footer{
+    border-top: 1px solid #e4e4e4;
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    margin: 1rem 0;
+    text-align: center;
+}
+.footer-message{
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #545e6f;
+    width: 33%;
+    float: left;
+    margin-top: 25px;
+}
+.footer-contact{
+    color: #545e6f;
+    width: 33%;
+    float: left;
+    margin-top: 25px;
+}
+.footer-copyright{
+    color: #545e6f;
+    width: 33%;
+    float: right;
+    margin-top: 25px;
+}
+
+/* js */
+#backtotop{
+    background-color: rgb(47, 48, 49);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 20px;
+    position: fixed;
+    /* 위치 고정하면 위치값이 필요 */
+    bottom: 30px;
+    right: 30px;
+    /* 움직일때 트랜지션 효과 주기 */
+    transition-property: background-color, opacity, visibility;
+    transition-duration: 0.3s, 0.5s, 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    /* 다른 요소보다 제일 위에 위치시키겠다 맨 위에 보여져야 하는 부분 9999 */
+    z-index: 999;
+}
+
+/* 아이콘 적용 방법 
+1.::after 가상 요소에
+2.content: "폰트어썸 유닠코드" 넣고
+3.font-family:FontAwesome 넣으면 됨!@ 
+*/
+#backtotop::after{
+    content: "\f077";
+    font-family:FontAwesome;
+    font-size: 1.5rem;
+    line-height: 40px;
+    color: #fff;
+}
+#backtotop.show{
+    opacity: 1;
+     visibility: visible;
+     background-color: rgb(47, 48, 49);
+}
+#backtotop.show:hover{
+    cursor: pointer;
+    background-color: #2186c4;
+}
+
+/* drag할수 있는 아이템임을 나타내는 표시를 포인터로 변경함 */
+ul li img:hover{
+    cursor: grab;
+}
+ul li img:active{
+    cursor: grabbing;
+}
+
+
+
+/* 메인 이미지는 main안에 넣어서 전체 꽉 차게 하고
+문구는 .main-container inner 안에 넣어서 위치 지정 */
+/* 반응형 */
 @media only screen and (min-width:1200px){
     .inner{
         max-width: 1200px;
     }
-
+}
+@media only screen and (max-width:980px){
+    .skill-container{
+        display: none;
+    }
+    .roadmap-desc{
+        display: none;
+    }
+    /* 특정길이 width넘어가면 안보이게 */
+}
+@media only screen and (max-width:480px){
+    .title{
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 0.8rem;
+    }
+    .message{
+        font-size: 1.4rem;
+        font-weight: normal;
+        color: #fff;
+        line-height: 2rem;
+    }
+    .class-skill{
+        display: none;
+    }
+    .class-container{
+        padding: 0.5rem;
+    }
+    .class-desc{
+        padding: 0rem;
+    }
+    /* 미디어쿼리에는 변경해줄 프로퍼티만 써주면 됨 */
+}
+@media only screen and (max-width:768px){
+    .class-skill{
+        display: none;
+    }
+    .class-container{
+        padding: 0.5rem;
+    }
+    .class-desc{
+        padding: 0rem;
+    }
 }
