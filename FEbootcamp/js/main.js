@@ -1,6 +1,6 @@
 
 //scrollup 버튼 만들기
-const backToTop = document.getElementById('backtotop');
+const backToTop = document.getElementById('backtotop'); //index에 만든 버튼 가져와서 객체 생성
 
 const checkScroll = () => {
     let pageYOffset = window.pageYOffset; //scroll값=위치 담아주는 변수
@@ -12,31 +12,32 @@ const checkScroll = () => {
     }
 }
 function moveBackToTop(){ //scroll이 중간에 있을때 클릭하면 scroll up되게
-    if(window.pageYOffset > 0){ //scroll이 제일 위에 있지 않을 때
-         window.scrollTo({top:0, behavior:"smooth"}) 
+    if(window.pageYOffset > 0){ //scroll위치가 맨 위가 아닐때
+         window.scrollTo({top:0, behavior:"smooth"}) //top0으로 올림
     }
 }
-window.addEventListener('scroll',checkScroll);
-backToTop.addEventListener('click',moveBackToTop);
+window.addEventListener('scroll',checkScroll); //window를 scroll하면 checkScroll 함수 작동
+backToTop.addEventListener('click',moveBackToTop); //backToTop을 click하면 moveBackToTop 함수 작동
 
 /*------------------------------------------------------- */
-//next 버튼
+//next 버튼. 슬라이드 왼쪽으로 가서 오른쪽 슬라이드 보여주기
 function transformNext(event){
     const slideNext = event.target; 
     const slidePrev = slideNext.previousElementSibling;
+    //next버튼이 두세개 있기 때문에 클릭했을때 어떤 줄에 있는 next버튼 누른건지 알기 위해 해당 ul 찾아 변수에 넣어줌
 
-    const classList = slideNext.parentElement.parentElement.nextElementSibling;
-    let activeLi = classList.getAttribute('data-position');
-    const liList = classList.getElementsByTagName('li');
+    const classList = slideNext.parentElement.parentElement.nextElementSibling; //ul 태그  선택
+    let activeLi = classList.getAttribute('data-position'); //ul 태그에 있는 현재 위치 data-position값 가져오기
+    const liList = classList.getElementsByTagName('li'); //li 카드들 리스트
 
     if(Number(activeLi) < 0){ //하나의 카드라도 왼쪽으로 이동했다면, 오른쪽으로 갈 수 있음
-        activeLi = Number(activeLi) + 260;
-        //왼쪽에 있던 카드가 오른쪽으로 갔다면, 다시 왼쪽으로 갈수 있으므로 prev버튼 활성화
+        activeLi = Number(activeLi) + 260; // 이동한 위치 바꿔주기
+        //왼쪽에 있던 카드가 오른쪽으로 갔다면, 오른쪽에 하나의 카드라도 있다는 뜻. 그럼 다시 왼쪽으로 갈수 있으므로 prev버튼 활성화
         slidePrev.style.color = '#2f3059'; 
         slidePrev.classList.add('slide-prev-hover');
-        slidePrev.addEventListener('click',transformPrev);
-        //현재 제일 앞에 보이는 카드가 첫번째 카드라면, 오른쪽 next로 갈수 없으므로 next 버튼 비활성화
-        if(Number(activeLi) === 0){
+        slidePrev.addEventListener('click',transformPrev);  
+               
+        if(Number(activeLi) === 0){ //현재 제일 앞에 보이는 카드가 첫번째 카드라면, 오른쪽 next로 갈수 없으므로 next 버튼 비활성화
             slideNext.style.color = '#cfd8dc'; 
             slideNext.classList.add('slide-next-hover');
             slideNext.removeEventListener('click',transformNext);
@@ -44,21 +45,21 @@ function transformNext(event){
     }
     classList.style.transition = 'transform 1s';
     classList.style.transform = 'translateX(' + String(activeLi)+ 'px)';
-    classList.setAttribute('data-position', activeLi); 
+    classList.setAttribute('data-position', activeLi); //33번 줄이랑 같은 내용 아닌가?? {}안에서 해준거라 다른듯?
 }
 
 //prev 버튼
 function transformPrev(event){
-    const slidePrev = event.target; //해당 event가 발생한 요소를 가져올수있음. 해당 prev 버튼 가져옴.
+    const slidePrev = event.target; //해당 event가 발생한 요소를 가져올수있음. transformPrev이벤트가 일어난 prev 버튼 가져옴.
     const slideNext = slidePrev.nextElementSibling;
 
     const classList = slidePrev.parentElement.parentElement.nextElementSibling; //ul 가져오기
     let activeLi = classList.getAttribute('data-position'); //data-position값(현재 위치) 가져올수 있는 변수 
     const liList = classList.getElementsByTagName('li');
-    //liList.length*260+Number(activeLi)는 현재 위치부터 오른쪽으로 나열되야 하는 나머지 카드들의 너비
-    //classList.clientWidth < (liList.length*260+Number(activeLi))는 오른쪽으로 나열될 카드가 넘친 상태이므로, 왼쪽으로 이동 가능
     if(classList.clientWidth < (liList.length * 260 + Number(activeLi))){ 
-        //activeLli값은 String일수 있으므로 Number로 변환. 전체 길이에 activeLi값 더해줌. 왼쪽으로 갈수 있는 상태인지 확인.
+        //liList.length*260+Number(activeLi)는 현재 위치부터 오른쪽으로 나열되야 하는 나머지 카드들의 너비
+        //classList.clientWidth < (liList.length*260+Number(activeLi))는 오른쪽으로 나열될 카드가 넘친 상태이므로, 왼쪽으로 이동 가능
+        //activeLli값은 String일수 있으므로??? Number로 변환. 전체 길이에 activeLi값 더해줌. 왼쪽으로 갈수 있는 상태인지 확인.
         activeLi = Number(activeLi)-260; //왼쪽으로 갈수 있는 상태면 왼쪽으로 한칸 이동. 변경된 activeLi값이 적용된 상황.
 
         if (classList.clientWidth > (liList.length * 260 + Number(activeLi))) {
@@ -74,27 +75,26 @@ function transformPrev(event){
     classList.style.transform = 'translateX(' + String(activeLi)+ 'px)';
     classList.setAttribute('data-position', activeLi); //바뀐 position값 넣어주기
 }
-
-//해당 class list 안 요소 li의 개수를 구하고 그 너비가 class list가 실제 표현할수 있는 너비보다 넘치면 prev 버튼 표시하기
+/*------------------------------------------------------- */
+//해당 classList 안 요소 li의 개수를 구하고 그 너비가 classList가 실제 표현할수 있는 너비보다 넘치면 prev 버튼 표시하기
 const slidePrevList = document.getElementsByClassName('slide-prev');
 
-for(let i=0; i < slidePrevList.length; i++){
-    let classList = slidePrevList[i].parentElement.parentElement.nextElementSibling; //콘솔 찍어서 slidePrevList의 부모 부모의 다음 형제 가져오기 = ul
-    let liList = classList.getElementsByTagName('li'); //가져온 ul 태그 안의 li태그 4개 리스트 배열로 받아오기
+for(let i=0; i < slidePrevList.length; i++){ 
+    let classList = slidePrevList[i].parentElement.parentElement.nextElementSibling; //ul=콘솔 찍어서 slidePrevList의 부모 부모의 다음 형제 가져오기
+    let liList = classList.getElementsByTagName('li'); //li=가져온 ul 태그 안의 li태그 4개 리스트 배열로 받아오기
 
-    //card가 ul태그 너비보다 크면, prev 버튼 활성화, next는 현재 data-position=0 맨 처음 카드 위치이므로 비활성화
-    if(classList.clientWidth < (liList.length*260)){ 
-        slidePrevList[i].classList.add('slide-prev-hover');
+    if(classList.clientWidth < (liList.length*260)){  //li카드 너비가 ul보다 크면. 내용물 넘치면
+        slidePrevList[i].classList.add('slide-prev-hover'); //prev 버튼 활성화
         slidePrevList[i].addEventListener('click',transformPrev);
-    }else{//ul태그 내에 li가 다 표시될 수 있을 경우 / prev next 버튼 안보이게
-          //태그 삭제 : 부모 요소 찾아서 removeChild
+        //next는 현재 data-position=0 맨 처음 카드 위치이므로 비활성화
+    }else{//ul태그 너비가 li카드보다 크면. ul구역 내에 li가 다 표시될 수 있을 경우 
+          //prev next 버튼 안보이게 태그 삭제 : 부모 요소 찾아서 removeChild
           const arrowContainer = slidePrevList[i].parentElement;
           arrowContainer.removeChild(slidePrevList[i].nextElementSibling); //next 버튼
           arrowContainer.removeChild(slidePrevList[i]); //prev 버튼
     }
 }
 /*------------------------------------------------------- */
-
 let touchstartX;
 let currentClassList;
 let currentImg;
