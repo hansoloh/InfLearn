@@ -193,6 +193,16 @@ section{
     cursor: pointer;
     color: #cfd8dc;
 }
+.slide-prev:hover{
+    transition: transform 0.5s;
+    transform: translateX(-2px);
+}
+.slide-next:hover{
+    transition: transform 0.5s;
+    transform: translateX(2px);
+}
+
+
 /* 방향아이콘 fas 속성이 inline-block이었음 버튼 두개 떨어져 보임
 arrowcontainer통째로 flex 속성 추가해주기 */
 .arrow-container{
@@ -204,7 +214,8 @@ arrowcontainer통째로 flex 속성 추가해주기 */
     list-style: none;
     padding: 1rem 0;
     margin: 0;
-    overflow: hidden;
+    overflow: none;
+    /* overflow:hidden 하면 transform시 이미지 짤림 */
 }
 .class-card{
     /* width: 240px; */
@@ -306,6 +317,7 @@ footer{
     float: right;
     margin-top: 25px;
 }
+
 
 /* js */
 #backtotop{
