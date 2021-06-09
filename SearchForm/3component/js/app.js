@@ -2,6 +2,11 @@ import SearchModel from './models/SearchModel.js'
 import KeywordModel from './models/KeywordModel.js'
 import HistoryModel from './models/HistoryModel.js'
 
+import FormComponent from './components/FormComponent.js'
+import ResultComponent from './components/ResultComponent.js'
+import ListComponent from './components/ListComponent.js'
+import TabComponent from './components/TabComponent.js'
+
 new Vue({
     el: '#app',
     data: {
@@ -14,23 +19,26 @@ new Vue({
         history: [], //각각 값이 있을 경우와 for / else 없을 경우로 생각
         searchResult: []
     },
-
+    components: {
+        'search-form': FormComponent,
+        'search-result': ResultComponent,
+        'list': ListComponent,
+        'tabs': TabComponent
+},
     created(){ //view 인스턴스가 생성될때 호출되는 함수
         this.selectedTab = this.tabs[0]
         this.fetchKeyword() //KeywordModel 가져오기
         this.fetchHistory()
     },
     methods: {
-        onSubmit(e){ //enter누르면 호출됨
+        onSubmit(query){ //enter누르면 호출됨
+            this.query = query
             this.search()
-        },
-        onKeyup(e){ //검색값 지웠을때
-            if(!this.query.length) this.resetForm()
         },
         onReset(e){
             this.resetForm()
         },
-        onChlickTab(tab){ //클릭 오타!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        onClickTab(tab){
             this.selectedTab = tab //탭 변경
         },
         onClickKeyword(keyword){
