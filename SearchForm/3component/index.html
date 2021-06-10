@@ -17,7 +17,7 @@
         v-on:@reset="onReset"></search-form> 
         <!-- FormComponent에서 submit event발생 시, app.js에 있는 onSubmit함수 호출 -->
         
-        <div class="container">   
+        <div class="content">   
             <div v-if="submitted"> 
             <search-result v-bind:data="searchResult" v-bind:query="query"></search-result>
             <!-- view인스턴스가 가지고 있는 결과값 v-bind로 넘겨주기 -->            
