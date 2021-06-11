@@ -1,0 +1,8 @@
+- 단일 컴포넌트
+ - components 폴더에 XComponent.vue 생성
+ - <template></template><script>export default{}</script> 
+   - 템플릿 가져오기 index.html
+   - 스크립트 가져오기 (템플릿 이름 가져올 필요 없음) XComponent.js
+   - index.html에 div 부분 가져오기
+ - App.vue - components:{'search-form':XComponent} 작성
+ - import해주기
