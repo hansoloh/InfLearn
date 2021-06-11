@@ -13,7 +13,7 @@
 }
 - index.html 맨 아래 html 밖에 template 생성
 - app.js에서 해당 component import
-- vue 인스턴스 components:{}에 component 추가
+  - vue 인스턴스 components:{}에 component 추가
 - index.html div따온 부분에 search-result 디렉티브 작성 
   - view인스턴스가 가지고 있는 결과값 v-bind로 넘겨주기
   - ResultComponent에서 props: ['data']로 받기

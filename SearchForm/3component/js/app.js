@@ -24,7 +24,7 @@ new Vue({
         'search-result': ResultComponent,
         'list': ListComponent,
         'tabs': TabComponent
-},
+    },
     created(){ //view 인스턴스가 생성될때 호출되는 함수
         this.selectedTab = this.tabs[0]
         this.fetchKeyword() //KeywordModel 가져오기
