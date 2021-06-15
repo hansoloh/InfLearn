@@ -18,14 +18,15 @@ export default {
   },
   methods: {
     addTodo: function(){
-      localStorage.setItem(this.newTodoItem, this.newTodoItem);
-      this.clearInput();      
+      if(this.newTodoItem !== ''){
+        this.$emit('addTodoItem',this.newTodoItem);
+        this.clearInput();            
+      }        
     },
     clearInput: function(){
       this.newTodoItem = '';
     }
   } 
-
 }
 </script>
 
