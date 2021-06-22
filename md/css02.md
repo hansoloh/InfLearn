@@ -77,12 +77,15 @@ cf) 텍스트 요소 중앙 배치 : text-align<br>
 
 ### display
 ---
-- 블럭 레벨 요소 <-> 인라인 레벨 요소
+- 블럭 레벨 요소 <-> 인라인 레벨 요소 display: block;
   - ex) 네비게이션 메뉴 가로 배치, 이미지를 표 형태로 배치
   - block
   - inline
   - inline-block
   - none
+  
+- block: 한줄 가득 차지함. 자동 줄변환. h div p ..
+- inline: 한줄에 여러개 가능. 한줄로 작성됨. span img ...
 
 *{box-sizing : border-box;}<br>
 ul{list-style : none;}<br>
