@@ -85,7 +85,11 @@ cf) 텍스트 요소 중앙 배치 : text-align<br>
   - none
   
 - block: 한줄 가득 차지함. 자동 줄변환. h div p ..
+  - 블록 요소는 vertical-align 이 적용되지 않는다.
+  - 블록 요소는 text-align이 적용되지 않는다.
 - inline: 한줄에 여러개 가능. 한줄로 작성됨. span img ...
+  - 인라인 요소는 height가 적용되지 않는다.
+  - 인라인 요소는 width가 적용되지 않는다.
 
 *{box-sizing : border-box;}<br>
 ul{list-style : none;}<br>
