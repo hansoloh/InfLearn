@@ -84,12 +84,19 @@ cf) 텍스트 요소 중앙 배치 : text-align<br>
   - inline-block
   - none
   
-- block: 한줄 가득 차지함. 자동 줄변환. h div p ..
+- block: 한줄 가득 차지함. 자동 줄변환. 
+  - h div p ..<address>, <article>, <aside>, <blockgquote>, <canvas>, <dd>, <div>, <dl>, <hr>, <header>, <form>,<h1>, <h2>, <h3>, <h4>, <h5>, <h6>, <table>, <pre>, <ul>, <p>, <ol>, <video>
   - 블록 요소는 vertical-align 이 적용되지 않는다.
   - 블록 요소는 text-align이 적용되지 않는다.
 - inline: 한줄에 여러개 가능. 한줄로 작성됨. span img ...
+  - <a>, <i>, <span>, <abbr>, <img>, <strong>, <b>, <input>, <sub>, <br>, <code>, <em>, <small>, <tt>, <map>, <textarea>, <label>, <sup>, <q>, <button>, <cite>
   - 인라인 요소는 height가 적용되지 않는다.
   - 인라인 요소는 width가 적용되지 않는다.
+  
+- inline-block
+  - 줄바꿈이 이루어지지 않는다.
+  - block처럼 width와 height를 지정 할 수 있다.
+  - 만약 width와 height를 지정하지 않을 경우, inline과 같이 컨텐츠만큼 영역이 잡힌다.
 
 *{box-sizing : border-box;}<br>
 ul{list-style : none;}<br>
