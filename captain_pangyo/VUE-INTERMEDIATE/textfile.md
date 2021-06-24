@@ -31,3 +31,11 @@
   - function 축약; 객체의 속성을 메서드로 사용할때 function 생략 가능
   - 객체의 속성명과 값 이름이 동일할때 축약 가능
     - ex) TodoHeader': TodoHeader -> TodoHeader
+---
+## vuex
+- 설치 시 ERESOLVE unable to resolve dependency tree 오류
+  - npm i vuex --save --legacy-peer-deps 
+    - npm 버전 4에서 6까지 스타일로 설치할때 모든 peer dependencies를 무시하고 설치할수 있음
+### 강의 환경설정과 cli 버전 호환 문제
+- vue2버전으로 vuex-todo 폴더 생성
+- src 폴처 아래 코드만 vue2 플젝으로 옮기기!!
