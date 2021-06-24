@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div>{{ first }} 곱하기 {{ second }} 는?</div>
+        <form v-on:submit="onSubmitForm">
+            <input type="number" ref="answer" v-model="value">
+            <button type="submit">입력</button>
+            <!-- <div>{{value}}</div> -->
+        </form>
+        <div id="result">{{ result }}</div>
+    </div>
+    
+</body>
+<script>
+    new Vue({
+        el: '#root',
+        data: {
+            first: Math.ceil(Math.random()*9),
+            second: Math.ceil(Math.random()*9),
+            value: '',
+            result: '',
+        },
+        methods: {
+            onSubmitForm(e){
+                e.preventDefault();
+                console.log(this);
+                //form의 기본 속성인 페이지 새로 고침을 방지하기 위함.
+                //Vue는 싱글 페이지 어플리케이션이라 페이지 새로고침되면 안됨.
+                if(this.first * this.second === parseInt(this.value)){
+                    this.result = '정답';
+                    this.first = Math.ceil(Math.random()*9);
+                    this.second = Math.ceil(Math.random()*9);
+                    this.value = '';
+                    this.$refs.answer.focus();
+                    //document.queryselector나 jquery$처럼 input태그 선택하여 가져온것
+                }else{
+                    this.result = '땡';
+                    this.value = '';
+                }
+            },
+        },
+    });
+</script>
+</html>
