@@ -7,3 +7,4 @@
   - package.json script에 "dev": "webpack-dev-server" 추가
 - npm i vue-style-loader -D / npm i css-loader -D 추가해주고 webpack에도 rules 추가
 - style scoped; 해당 component에서만 style 적용하고 싶을때 scoped
+- 
