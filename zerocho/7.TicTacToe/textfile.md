@@ -21,3 +21,5 @@ TicTacToe - TableComponent - TrComponent - TdComponent
   - import store from './store';
   -  export default {
     store,
+- root.vue 
+  - <template><component> component에 tag를 넣어주면 <slot>에서 해당 tag가 화면에 렌더링됨

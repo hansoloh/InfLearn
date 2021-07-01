@@ -1,6 +1,7 @@
 <template>
     <table>
-        <tr-component v-for="(rowData, index) in tableData" :key="index" :row-index="index"></tr-component>
+        <!-- <tr-component v-for="(rowData, index) in tableData" :key="index" :row-index="index"></tr-component> -->
+        <slot/>
     </table>
 </template>
 
@@ -8,13 +9,13 @@
  import TrComponent from './TrComponent';
 
  export default{
-     components: {
-         TrComponent,
-     },
-     computed: {
-         tableData(){
-             return this.$store.state.tableData;
-         },
-     },
+    //  components: {
+    //      TrComponent,
+    //  },
+    //  computed: {
+    //      tableDat a(){
+    //          return this.$store.state.tableData;
+    //      },
+    //  },
  };
 </script>
