@@ -12,8 +12,7 @@
 
 <script>
  import {mapState} from 'vuex';
- import { CLICK_MINE, FLAG_CELL, OPEN_CELL, QUESTION_CELL } from '../8.MineSweeper/store';
- import {CODE} from './store';
+ import {CODE, CLICK_MINE, FLAG_CELL, OPEN_CELL, QUESTION_CELL } from '../8.MineSweeper/store';
 
  export default{
      computed: {
