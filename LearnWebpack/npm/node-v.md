@@ -26,3 +26,6 @@ npm i vue--save-dev = npm i vue -D ; devDependencies (개발용 라이브러리)
   - 최신 FE Framework에서 가장 많이 사용되는 Module Bundler.
     - Module Bundler; 웹 애플리케이션을 구성하는 자원 HTML CSS JS Images등을 모두 각각의 모듈로 보고 이를 조합, 하나의 결과물로 만드는 도구
     - Module; 프로그래밍 관점에서 특정 기능을 갖는 작은 코드 단위
+
+- "build":"webpack --mode=none"
+- dist 폴더; webpack으로 변환한 결과 파일이 있음
