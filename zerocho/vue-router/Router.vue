@@ -12,7 +12,7 @@
 </template>
 
 <script>
- import router from './rountes';
+ import router from './routes';
 
  export default {
    router,
