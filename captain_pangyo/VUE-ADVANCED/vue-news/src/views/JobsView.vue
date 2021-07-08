@@ -13,11 +13,6 @@
 <script>
 
 export default {
-  // data(){
-  //   return{
-  //     jobs: []
-  //   }
-  // },
   created(){
     // fetchJobsList()
     // .then(response => this.jobs = response.data)

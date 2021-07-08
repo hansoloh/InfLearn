@@ -1,24 +1,35 @@
 <template>
   <div>
       <!-- <div v-for="item in this.$store.state.ask">{{ item.title }}</div> -->
-      <p v-for="ask in this.$store.state.ask" :key="ask.id">
-        <a :href="ask.url">
+      <p v-for="item in fetchedAsk" :key="item.id">
+        <!-- <a :href="ask.url">
           {{ ask.title }}
-        </a>
-        <small>{{ ask.time_ago }} by {{ ask.user }}</small>
+        </a> -->
+        <router-link v-bind:to="`item/${item.id}`">
+          {{ item.title }}
+        </router-link>
+        <small>{{ item.time_ago }} by {{ item.user }}</small>
       </p>
   </div>
       
 </template>
 
 <script>
+import {mapSate, mapGetters } from 'vuex';
+
 export default {
   // data(){
   //   return {
   //     ask: []
   //   }
   // },
+  computed: {
+    ...mapGetters([
+      'fetchedAsk'
+    ]),
+  },
   created(){
+    this.$store.dispatch('FETCH_ASK');
     // var vm = this;
     // fetchAskList()
     // .then(function(response){
@@ -27,10 +38,7 @@ export default {
     // .catch(function(error){
     //   console.log(error);
     // });
-    this.$store.dispatch('FETCH_ASK')
-    .then(() => console.log('success'))
-      .catch(() => console.log('fail'));
-  }
+  },
 }
 </script>
 
