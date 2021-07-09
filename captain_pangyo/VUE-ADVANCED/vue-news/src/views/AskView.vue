@@ -1,47 +1,72 @@
 <template>
   <div>
-      <!-- <div v-for="item in this.$store.state.ask">{{ item.title }}</div> -->
-      <p v-for="item in fetchedAsk" :key="item.id">
-        <!-- <a :href="ask.url">
-          {{ ask.title }}
-        </a> -->
-        <router-link v-bind:to="`item/${item.id}`">
+    <list-item></list-item>
+
+    <!-- <ul class="news-list">
+      <li v-for="item in fetchedAsk" class="post">
+        
+        <div class="points">
+          {{ item.points }}
+        </div>
+      
+        <div>
+        <p class="news-title">
+          <router-link v-bind:to="`item/${item.id}`">
           {{ item.title }}
         </router-link>
-        <small>{{ item.time_ago }} by {{ item.user }}</small>
-      </p>
-  </div>
-      
+        </p>
+        <small class="link-text">
+          {{ item.time_ago }} by
+          <router-link v-bind:to="`/user/${item.user}`" class="link-text">{{ item.user }}</router-link>
+        </small>
+        </div>
+      </li>
+      </ul>   -->
+  </div>    
 </template>
 
 <script>
-import {mapSate, mapGetters } from 'vuex';
+import ListItem from '../components/ListItem.vue';
+//import {mapSate, mapGetters } from 'vuex';
+import bus from '../utils/bus';
 
 export default {
-  // data(){
-  //   return {
-  //     ask: []
-  //   }
-  // },
-  computed: {
-    ...mapGetters([
-      'fetchedAsk'
-    ]),
+  components: {
+    ListItem,
   },
   created(){
-    this.$store.dispatch('FETCH_ASK');
-    // var vm = this;
-    // fetchAskList()
-    // .then(function(response){
-    //   vm.ask = response.data;
-    // })
-    // .catch(function(error){
-    //   console.log(error);
-    // });
-  },
+    bus.$emit('start:spinner');
+    setTimeout(() => {
+    this.$store.dispatch("FETCH_ASK")
+      .then(() => {
+        console.log('fetched');
+        bus.$emit('end:spinner');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, 3000);
+}
+  // // data(){
+  // //   return {
+  // //     ask: []
+  // //   }
+  // // },
+  // computed: {
+  //   ...mapGetters([
+  //     'fetchedAsk'
+  //   ]),
+  // },
+  // created(){
+  //   this.$store.dispatch('FETCH_ASK');
+  //   // var vm = this;
+  //   // fetchAskList()
+  //   // .then(function(response){
+  //   //   vm.ask = response.data;
+  //   // })
+  //   // .catch(function(error){
+  //   //   console.log(error);
+  //   // });
+  // },
 }
 </script>
-
-<style>
-
-</style>
