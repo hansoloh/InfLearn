@@ -27,7 +27,7 @@
 
 <script>
 import ListItem from '../components/ListItem.vue';
-//import {mapSate, mapGetters } from 'vuex';
+//import { mapSate, mapGetters } from 'vuex';
 import bus from '../utils/bus';
 
 export default {
