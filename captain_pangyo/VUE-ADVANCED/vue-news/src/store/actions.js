@@ -57,13 +57,10 @@ export default {
                 console.log(error);
             })
     },
-    FETCH_LIST({ commit }, pageName){
-        return fetchList(pageName)
-        .then(response =>{
-            console.log(4);
-            commit('SET_LIST', response.data);
-            return response;
-        })
-        .catch(error => console.log(error));
+    async FETCH_LIST({ commit }, pageName){
+        const response = await fetchList(pageName);
+        console.log(4);
+        commit('SET_LIST', response.data);
+        return response;
     },
 }
