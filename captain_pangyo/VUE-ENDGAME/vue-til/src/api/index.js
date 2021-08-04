@@ -5,8 +5,6 @@ const instance = axios.create({
 });
 
 function registerUser(userData) {
-  //const url = 'http://localhost:3000/signup';
-  //axios.post('http://localhost:3000/signup', userData);
   return instance.post('signup', userData);
 }
 

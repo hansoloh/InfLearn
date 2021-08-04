@@ -6,7 +6,7 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 export default new VueRouter({
-  mode: 'history', //url에 # 제거
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -21,7 +21,7 @@ export default new VueRouter({
       component: () => import('@/views/SignupPage.vue'),
     },
     {
-      path: '*', //등록되지 않은 url에 대해 반응하는 라우터
+      path: '*',
       component: () => import('@/views/NotFoundPage.vue'),
     },
   ],
