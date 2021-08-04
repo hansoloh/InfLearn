@@ -1,0 +1,55 @@
+완성본 캡처/ 구현 기능 상세/ 정리해서 포폴
+
+풀스택을 위한 탄탄한 프런트엔드 부트캠프 (HTML, CSS, 바닐라 자바스크립트 + ES6) [풀스택 Part2]
+
+실습 UI 개발로 배워보는 순수 javascript 와 VueJS 개발
+Javascript 실전 개발 방법
+Vue.JS 기초
+MVC/MVVM 아키텍처
+컴퍼넌트 개발
+순수 JS 와 Vue.js 와의 개발 방법론 차이
+순수 JS 로 기능 구현 실습
+
+
+Vue.js 시작하기 - Age of Vue.js 
+프런트엔드 개발
+화면 UI 개발
+Javascript
+웹 개발
+Vue.js 개발
+Vue.js
+
+Vue.js 중급 강좌 - 웹앱 제작으로 배워보는 Vue.js, ES6, Vuex ; Todo App
+웹 개발
+Javascript
+Vue.js
+뷰 최신 CLI 도구 특징을 알 수 있어요
+컴포넌트 기반 웹 앱 설계 방법을 배울 수 있습니다
+컴포넌트 설계 방법
+ES6 (const & let, 화살표 함수, 향상된 객체 리터럴, 모듈 등)
+Vuex (state, getters, mutations, actions, modules 등)
+ 
+프론트엔드 개발자를 위한 웹팩
+Front-End
+Webpack
+NPM
+프런트엔드 빌드 시스템
+ES6 Import와 Export 문법
+
+Vue.js 완벽 가이드 - 실습과 리팩토링으로 배우는 실전 개념
+최신 뷰 CLI(v3.0)로 프로젝트를 구성하고 개발하는 방법
+Vue Router 기본부터 실전, 그리고 고급 패턴까지
+Axios를 이용한 API 호출 방법과 자바스크립트 비동기 처리
+Vuex와 상태 관리에 대한 깊은 이해
+User Experience를 고려한 데이터 호출 방법
+Mixins와 High Order Component를 이용한 컴포넌트 재활용
+외부 라이브러리를 프로젝트에 결합하는 방법
+뷰 컴포넌트 Design Pattern
+
+Vue.js 끝장내기 - 실무에 필요한 모든 것
+프론트엔드 개발
+화면 UI 개발
+Vue.js 실무
+Vue.js 실무 환경 구성
+Vue.js 개발
+백엔드 API 문서 읽는 방법
