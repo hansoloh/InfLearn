@@ -3,7 +3,7 @@
     <div class="form-wrapper form-wrapper-sm">
       <form @submit.prevent="submitForm" class="form">
         <div>
-          <label for="username">ID</label>
+          <label for="username">id:</label>
           <input id="username" type="text" v-model="username" />
           <p class="validation-text">
             <span class="warning" v-if="!isUsernameValid && username">
@@ -12,7 +12,7 @@
           </p>
         </div>
         <div>
-          <label for="password">PW</label>
+          <label for="password">pw:</label>
           <input id="password" type="text" v-model="password" />
         </div>
         <button
@@ -20,7 +20,7 @@
           type="submit"
           class="btn"
         >
-          Log In
+          로그인
         </button>
       </form>
       <p class="log">{{ logMessage }}</p>
@@ -56,10 +56,11 @@ export default {
           password: this.password,
         };
         const { data } = await loginUser(userData);
-        console.log(data.user.username);
+        //console.log(data.token);
+        this.$store.commit('setToken', data.token);
         this.$store.commit('setUsername', data.user.username);
         this.$router.push('/main');
-        //this.logMessage = `${data.user.username} 님 환영합니다`;
+        // this.logMessage = `${data.user.username} 님 환영합니다`;
         // this.initForm();
       } catch (error) {
         // 에러 핸들링할 코드
