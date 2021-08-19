@@ -22,9 +22,12 @@
 </div>
 </template>
 <script>
-import axios from 'axios';
+import ApiMixin from '../api.js';
 
 export default {
+	name: "",
+	mixins: [ApiMixin],
+	components: {},
 	data() {
 		return {
 			productList: []
@@ -32,25 +35,22 @@ export default {
 	},
 	setup(){},
 	create(){},
-	mounted(){},
+	mounted(){
+		console.log('component mounted()');
+	},
 	unmounted(){
 	},
 	methods:{		
 		async getProductList(){
-			this.productList = await this.api('https://3347078a-147d-42c0-9eb0-e1d4d97ec852.mock.pstmn.io/productList','get',{})
-			console.log(this.productList);
-		},
-		async api(url, method, data) {
-			return (await axios({
-				method: method,
-				url: url,
-				data: data
-			}).catch(e => {
-				console.log(e);
-			})).data;
-		}
-	}
-}
+			this.productList = await this.$callAPI(
+				'https://3347078a-147d-42c0-9eb0-e1d4d97ec852.mock.pstmn.io/productList',
+				'get',
+				{}
+				);		
+		console.log(this.productList);
+	},
+},
+};
 </script>
 
 <style scoped>

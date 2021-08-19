@@ -1,58 +1,49 @@
 <template>
 <div>
-	<input type="text" v-model="name" />
-	<input type="text" v-model.number="age" />
-	<input type="text" v-model="job" />
-	<button type="button" @click="saveUserInfo">저장</button>
+	<!-- <button type="button" @click="callChildFunc">부모 클릭</button>
+	<ChildComponent ref="child"/>
+	<ChildComponent @send-message="sendMessage" />
+	<h1>{{parentMsg}}</h1> -->
+	<ChildComponent ref="child" />
+	<button type="button" @click="showData">부모 버튼</button>
 </div>
 </template>
 <script>
+import ChildComponent from '../components/ChildComponent.vue';
 
 export default {
+	name: '',
+	components: {ChildComponent},
 	data() {
 		return {
-			name: '',
-			age: 0,
-			job: '',
-			userInfo: {
-				name: '',
-				age: 0,
-				job: '',
-			}
+			parentMsg: ''
 		};
+	},
+	computed: {
+		msg(){
+			return this.$refs.child.msg;
+		}
 	},
 	setup(){},
 	create(){},
 	mounted(){},
 	unmounted(){
 	},
-	methods:{		
-		saveUserInfo(){
-			if(this.userInfo.name == ''){
-				//return alert("사용자 이름을 입력하세요.");
-				return this.$swal('사용자 이름을 입력하세요');
+	methods:{
+		callChildFunc(){
+			//this.$refs.child.$refs.child_btn.click();
+			//this.$refs.child.childFunc();
+			this.$refs.child.msg = '부모 컴포넌트에서 변경한 메세지얌';
+			},
+			sendMessage(data){
+				alert(data);
+				this.parentMsg = data;
+			},
+			showData(){
+				alert(this.msg);
 			}
-			if(this.userInfo.age == 0 || this.userInfo.age == ''){
-				return alert("나이를 입력하세요.");
-			}
-
-			// const params = {
-			// 	name: this.name,
-			// 	age: this.age,
-			// 	job: this.job
-			// }
-			const r = this.saveData(this.userInfo);
-			if(r == 'S'){
-				alert('사용자 정보가 생성되었습니다.')
-			}
-		},
-		saveData(params){
-			console.log(params);
-			const r = 'S';
-			return r;
 		}
 	}
-}
 </script>
 
 <style scoped>

@@ -47,6 +47,21 @@ const routes = [
     name: 'Example',
     component: () => import(/* webpackChunkName: "about", webpackPrefetch:true */ '../views/Example.vue')
   },
+  {
+    path: '/serverdata',
+    name: 'ServerData',
+    component: () => import(/* webpackChunkName: "about", webpackPrefetch:true */ '../views/ServerData.vue')
+  },
+  {
+    path: '/slot',
+    name: 'SlotUseModalLayout',
+    component: () => import(/* webpackChunkName: "about", webpackPrefetch:true */ '../views/SlotUseModalLayout.vue')
+  },
+  {
+    path: '/mixin',
+    name: 'MixinTest',
+    component: () => import(/* webpackChunkName: "about", webpackPrefetch:true */ '../views/MixinTest.vue')
+  },
 ]
 
 const router = createRouter({
