@@ -34,12 +34,15 @@ export default {
 		};
 	},
 	setup(){},
+	beforeCreate(){},
 	create(){},
+	beforeMount(){},
 	mounted(){
 		console.log('component mounted()');
 	},
-	unmounted(){
-	},
+	beforeUpdate(){},
+	updated(){},
+	unmounted(){},
 	methods:{		
 		async getProductList(){
 			this.productList = await this.$callAPI(
