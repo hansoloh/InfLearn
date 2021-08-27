@@ -62,6 +62,22 @@ const routes = [
     name: 'MixinTest',
     component: () => import(/* webpackChunkName: "about", webpackPrefetch:true */ '../views/MixinTest.vue')
   },
+
+  {
+    path: '/kakaologin',
+    name: 'Kakao Login',
+    component: () => import(/* webpackChunkName: "about", webpackPrefetch:true */ '../views/KakaoLogin.vue')
+  },
+  {
+    path: '/naverlogin',
+    name: 'Naver Login',
+    component: () => import(/* webpackChunkName: "about", webpackPrefetch:true */ '../views/NaverLogin.vue')
+  },
+  {
+    path: '/googlelogin',
+    name: 'Google Login',
+    component: () => import(/* webpackChunkName: "about", webpackPrefetch:true */ '../views/GoogleLogin.vue')
+  },
 ]
 
 const router = createRouter({

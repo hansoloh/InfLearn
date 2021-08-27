@@ -8,3 +8,5 @@ const app = createApp(App)
 app.use(router)
 app.use(VueSweetalert2)
 app.mount('#app')
+
+window.Kakao.init("c6774a5692a3476d236dfccb693b7472");
