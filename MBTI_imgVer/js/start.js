@@ -41,69 +41,81 @@ function goResult(){
     setResult();
 }
 
-function ImageFadeOut(qIdx, idx){
-  var left = document.querySelector('.leftImage');
-  var right = document.querySelector('.rightImage');
-  left.disabled = true;
-  left.classList.remove("fadeIn");
-  left.classList.add("fadeOut");
-  right.disabled = true;
-  right.classList.remove("fadeIn");
-  right.classList.add("fadeOut");
+function imageNext(qIdx, idx){
+  let leftImage = document.querySelector('.leftImage');
+  let rightImage = document.querySelector('.rightImage');
 
-  setTimeout(() =>{
-    if(qIdx+1 === endPoint){
-      goResult();
-      return;
-    } else{
-      setTimeout(() => {
-        var target = qnaList[qIdx].a[idx].type;
-        for(let i = 0; i < target.length; i++){
-          select[target[i]] += 1;
-        }
-        goNext(++qIdx);
-      },450);
-    }
-  },450)
+     leftImage.disabled = true;
+     leftImage.classList.remove('fadeIn');
+			leftImage.classList.add('fadeOut');
 
+      rightImage.disabled = true;
+      leftImage.classList.remove('fadeIn');
+			rightImage.classList.add('fadeOut');	
+
+		setTimeout(() => {
+      if(qIdx+1 === endPoint){
+        goResult();
+        return;
+      }
+      else{
+        setTimeout(() =>{
+          var target = qnaList[qIdx].a[idx].type;
+        for(let i = 0; i <target.length; i++){
+        select[target[i]] += 1;
+      }	
+        leftImage.style.display = 'none';
+        rightImage.style.display = 'none';
+
+      goNext(++qIdx);
+        },450)        
+      }		
+	},450)
 }
 
 function goNext(qIdx){
+  if(qIdx === endPoint){
+    goResult();
+    return;
+  }
+
   var q = document.querySelector('.qBox');
   q.innerHTML = qnaList[qIdx].q;
-
-  var left = document.querySelector('.leftImage');
-  var right = document.querySelector('.rightImage');
-  var qnaURL = './img/question/';
-  left.src = qnaURL + qIdx + '-A.png';
-  right.src = qnaURL + qIdx + '-B.png';
-
-  try {
-    left.classList.remove("fadeOut");
-    right.classList.remove("fadeOut");
-  } catch (e) {
-    console.log(e);
-  }
-  left.classList.add("fadeIn");
-  right.classList.add("fadeIn");
-
-  left.addEventListener("click", function(){
-    var target = qnaList[qIdx].a[0].type;
-    ImageFadeOut(qIdx ,0);
-  }, false);
-
-  right.addEventListener("click", function(){
-    var target = qnaList[qIdx].a[1].type;
-    ImageFadeOut(qIdx, 1);
-  }, false);
-
   var status = document.querySelector('.statusBar');
   status.style.width = (100/endPoint) * (qIdx+1) + '%';
+
+  let qnaURL = './img/question/';
+  let leftURL = qnaURL + qIdx + '-A.png';
+  let rightURL = qnaURL + qIdx + '-B.png';
+
+  let leftImage = document.querySelector('.leftImage');
+  let rightImage = document.querySelector('.rightImage');
+
+  leftImage.src = leftURL;
+  rightImage.src = rightURL;
+
+  leftImage.style.display = 'block';
+  rightImage.style.display = 'block';
+
+  leftImage.classList.remove('fadeOut');
+  rightImage.classList.remove('fadeOut');
+
+  leftImage.classList.add('fadeIn');
+  rightImage.classList.add('fadeIn');
+
+  leftImage.addEventListener("click", function(){
+    imageNext(qIdx, 0);
+	},false);
+
+  rightImage.addEventListener("click", function(){
+		imageNext(qIdx, 1);
+	},false);
 }
 
 function begin(){
   main.style.WebkitAnimation = "fadeOut 1s";
   main.style.animation = "fadeOut 1s";
+  
   setTimeout(() => {
     qna.style.WebkitAnimation = "fadeIn 1s";
     qna.style.animation = "fadeIn 1s";
