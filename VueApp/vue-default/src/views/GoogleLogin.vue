@@ -1,6 +1,7 @@
 <template>
 <div>
   <div id="google-signin-btn"></div>
+  <button type="button" @click="signOut">LogOut</button>
 </div>
 </template>
 <script>

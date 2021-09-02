@@ -26,7 +26,7 @@ export default {
   methods: {
     kakaoLogin() {
       window.Kakao.Auth.login({
-        scope: "profile, account_email",
+        scope: "profile_nickname, account_email",
         success: this.getKakaoAccount,
       });
     },
@@ -37,11 +37,12 @@ export default {
           const kakao_account = res.kakao_account;
           const nickname = kakao_account.profile.nickname; //카카오 닉네임
           const email = kakao_account.email; //카카오 이메일
+
           console.log("nickname", nickname);
           console.log("email", email);
           //로그인 처리 구현
           console.log(kakao_account);
-          this.$store.commit("user", kakao_account);
+          //this.$store.commit("user", kakao_account);
           alert("로그인 성공!");
         },
         fail: (error) => {
