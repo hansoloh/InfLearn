@@ -1,0 +1,47 @@
+h1 {
+    color: antiquewhite;
+    font-size: 25px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#container {
+    height: 160px;
+    width: 450px;
+    text-align: center;
+    background-color: rgb(69, 118, 182);
+    box-shadow: 3px 2px 2px lightslategray;
+    border-radius: 15px;
+}
+
+input {
+    background-color: rgb(141, 181, 199);
+    color: white;
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
+    border: 1px solid rgb(141, 181, 199);
+    text-align: center;
+    margin: 7px 5px 0 7px;
+    margin-top: 10px;
+}
+
+#seven {
+    background-color: gold;
+    color: grey;
+    font-weight: bold;
+}
+
+#submit {
+    background-color: darksalmon;
+    border: 1px solid darksalmon;
+}
+
+#submit:hover {
+    background-color: crimson;
+}
