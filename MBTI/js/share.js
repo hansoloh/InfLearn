@@ -15,6 +15,7 @@ function setShare(){
 			title: shareTitle,
 			description: shareDes,
 			imageUrl: shareImage,
+			//왜 이미지 못받아오지
 			link: {
 				mobileWebUrl: shareURL,
 				webUrl: shareURL
@@ -31,6 +32,7 @@ function setShare(){
 				link: {
 				mobileWebUrl: shareURL,
 				webUrl: shareURL
+				//결과도 못받아옴
 				},
 			},
 			]
