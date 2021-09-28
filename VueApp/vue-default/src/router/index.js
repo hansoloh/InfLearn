@@ -45,7 +45,7 @@ const routes = [
   {
     path: '/example',
     name: 'Example',
-    component: () => import(/* webpackChunkName: "about", webpackPrefetch:true */ '../views/Example.vue')
+    component: () => import(/* webpackChunkName: "about", webpackPrefetch:true */ '../views/Example1.vue')
   },
   {
     path: '/serverdata',

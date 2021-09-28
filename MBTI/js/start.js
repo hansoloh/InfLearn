@@ -8,7 +8,7 @@ const select = [0,0,0,0,0,0,0,0,0,0,0,0];
 function calResult(){
 	var result = select.indexOf(Math.max(...select));
 	return result;
-	//console.log(select);
+	console.log(select);
 
 	for (let i = 0; i< endPoint; i++){
 		var target = qnaList[i].a[select[i]];
@@ -78,6 +78,7 @@ function addAnswer(answerText, qIdx, idx){
 
 	a.appendChild(answer);
 	answer.innerHTML = answerText;
+	
 	answer.addEventListener("click", function(){
 		var children = document.querySelectorAll('.answerList');
 		for(let i = 0; i<children.length; i++){
@@ -88,7 +89,7 @@ function addAnswer(answerText, qIdx, idx){
 		setTimeout(() => {
 			var target = qnaList[qIdx].a[idx].type;
 			for(let i = 0; i <target.length; i++){
-			select[this.type[i]] += 1;
+			select[target[i]] += 1;
 		}
 			for(let i = 0; i<children.length; i++){
 				children[i].style.display = 'none';
@@ -110,8 +111,8 @@ function goNext(qIdx){
 		addAnswer(qnaList[qIdx].a[i].answer, qIdx, i);
 	}
 
-	var statusBar = document.querySelector('.statusBar');
-	statusBar.style.width = (100/endPoint) * (qIdx+1) + '%';
+	var status = document.querySelector('.statusBar');
+	status.style.width = (100/endPoint) * (qIdx+1) + '%';
 
 	var statusNumber = document.querySelector('.statusNumber');
 	statusNumber.innerHTML = (qIdx+1) + '/12';
