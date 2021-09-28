@@ -20,11 +20,11 @@ function setShare(){
 				webUrl: shareURL
 			},
 			},
-			social: {
-			likeCount: 10,
-			commentCount: 20,
-			sharedCount: 30,
-			 },
+			// social: {
+			// likeCount: 10,
+			// commentCount: 20,
+			// sharedCount: 30,
+			//  },
 			buttons: [
 			{
 				title: '결과 확인하기',

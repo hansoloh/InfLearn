@@ -3,20 +3,22 @@
 }
 
 .qBox{
-	background-color: whitesmoke;
+	/* background-color: whitesmoke; */
 	text-align: center;
 	border-radius: 20px;
 	font-size: 18px;
+	font-weight: bold;
 	width: 80%;
 }
 
 .answerList{
-	background-color: whitesmoke;
+	background-color: rgb(243, 243, 243);
+	opacity: 80%;
 	border-radius: 20px;
 	display: block;
 	width: 80%;
 	border: 0px;
-	font-size: 20px;
+	font-size: 16px;
 }
 
 .answerList:hover, .answerList:focus{
@@ -27,14 +29,15 @@
 .status{
 	height: 20px;
 	width: 80%;
-	background-color: black;
+	background-color: white;
 	border-radius: 20px;
+
 }
 
 .statusBar{
 	height: 100%;
 	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#febbbb+0,fe9090+45,ff5c5c+100;Red+3D+%231 */
-	background-color: #febbbb; /* Old browsers */
+	background-color: lightblue; /* Old browsers */
 	background: -moz-linear-gradient(top,  #febbbb 0%, #fe9090 45%, #ff5c5c 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top,  #febbbb 0%,#fe9090 45%,#ff5c5c 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom,  #febbbb 0%,#fe9090 45%,#ff5c5c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -44,7 +47,9 @@
 }
 .statusNumber{
 	text-align: right;
-	background-color: pink;
+	background-color: white;
+	color: black;
+	/* font-weight: bold; */
 }
 .imgbox{
 	vertical-align: middle;
