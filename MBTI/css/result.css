@@ -1,3 +1,6 @@
+body{
+	background-color: #D3CFC2;
+}
 #result{
 	display: none;
 	background-color: white;
@@ -5,43 +8,50 @@
 	text-align: center;
 	border-radius: 20px;
 }
-
 #ShareResult{
 	background-color: white;
 	width: 80%;
 	text-align: center;
 	border-radius: 20px;
 }
-
 .resultname{
 	font-size: 20px;
 	font-weight: bold;
 }
-
 .resultDesc{
 	font-size: 16px;
+	/* text-align: left; */
+}
+#resultBtn{
+	background-color: #E45152;
+}
+#resultBtn:hover{
+	color: white;
+	background-color: #FFBF00;
 }
 
 .kakao{
 	color: white;
-	background-color: #FEE500;
+	background-color: #FFBF00;
 	font-size: 20px;
+	font-weight: bold;
 	border: 0px;
 	border-radius: 10px;
 }
 .kakao:hover, .kakao:focus{
 	background-color: whitesmoke;
-	color: #FEE500;
+	color: #FFBF00;
 }
 
 .retry{
 	color: white;
-	background-color: pink;
+	background-color: #E45152;
 	font-size: 20px;
+	font-weight: bold;
 	border: 0px;
 	border-radius: 10px;
 }
 .retry:hover, .retry:focus{
 	background-color: whitesmoke;
-	color: pink;
+	color: #E45152;
 }
