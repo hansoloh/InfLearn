@@ -1,4 +1,4 @@
-## Love type test defined by 12 Zodiac animals
+## 💟 Love type test defined by 12 Zodiac animals
 
 ### 🛠️ Stacks
 HTML CSS VanilaJS Bootstrap
